@@ -1,0 +1,25 @@
+# Render Blueprint — ApexVelocity Telegram Mini App
+# Deploy: dashboard.render.com -> New -> Blueprint -> select this repo.
+#
+# Free-plan note: the filesystem is ephemeral, so the SQLite database is
+# recreated and re-seeded on every deploy/restart (the seed is idempotent).
+# Orders/users persist only until the next restart — swap DATABASE_URL to a
+# hosted Postgres and change the Prisma provider for durable storage.
+
+services:
+  - type: web
+    name: sportkiyim
+    runtime: node
+    plan: free
+    buildCommand: npm install --include=dev && npm run build
+    startCommand: npx prisma db push --skip-generate && npx prisma db seed && npx next start -p $PORT
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: DATABASE_URL
+        value: "file:./dev.db"
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false # kiritish so'raladi — bot tokeningizni shu yerga qo'yasiz
