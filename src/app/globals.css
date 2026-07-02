@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-background text-on-background antialiased;
+  }
+  body {
+    @apply font-body text-body-md overflow-x-hidden;
+  }
+  ::selection {
+    background: #c3f400;
+    color: #161e00;
+  }
+  /* Technical scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #131313;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #353534;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c3f400;
+  }
+}
+
+@layer components {
+  .neon-glow-hover {
+    transition: box-shadow 150ms ease, transform 150ms ease;
+  }
+  .neon-glow-hover:hover {
+    box-shadow: 0 0 15px rgba(195, 244, 0, 0.4);
+  }
+  /* "Technical Kinetic" input: dark surface, bottom border, neon on focus */
+  .kinetic-input {
+    @apply w-full bg-surface-container border-0 border-b border-outline-variant px-4 py-3
+      text-on-surface text-body-md rounded-t
+      focus:ring-0 focus:border-primary-fixed focus:outline-none
+      transition-colors duration-200 placeholder:text-on-surface-variant/50;
+  }
+  .btn-primary {
+    @apply bg-primary-fixed text-on-primary-fixed font-body text-label-md uppercase tracking-wider
+      rounded px-8 py-4 transition-transform duration-150 hover:scale-[1.02] neon-glow-hover
+      disabled:opacity-40 disabled:pointer-events-none;
+  }
+  .btn-ghost {
+    @apply border-2 border-primary-fixed text-primary-fixed font-body text-label-md uppercase tracking-wider
+      rounded px-8 py-4 transition-all duration-150 hover:bg-primary-fixed/10 hover:scale-[1.02];
+  }
+  .section-title {
+    @apply font-display text-headline-lg text-primary uppercase tracking-tight border-l-4 border-primary-fixed pl-4;
+  }
+}

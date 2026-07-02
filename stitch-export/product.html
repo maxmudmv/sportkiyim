@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ApexVelocity - Product Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary": "#283500",
+                      "surface-container-highest": "#353534",
+                      "error": "#ffb4ab",
+                      "surface": "#131313",
+                      "outline": "#8e9379",
+                      "on-primary-fixed": "#161e00",
+                      "surface-variant": "#353534",
+                      "surface-container-high": "#2a2a2a",
+                      "error-container": "#93000a",
+                      "surface-container-low": "#1c1b1b",
+                      "surface-container-lowest": "#0e0e0e",
+                      "surface-dim": "#131313",
+                      "secondary-fixed-dim": "#ffb59c",
+                      "on-tertiary": "#21323e",
+                      "inverse-surface": "#e5e2e1",
+                      "on-secondary-fixed-variant": "#822700",
+                      "on-primary-fixed-variant": "#3c4d00",
+                      "inverse-primary": "#506600",
+                      "primary-fixed-dim": "#abd600",
+                      "on-error-container": "#ffdad6",
+                      "on-error": "#690005",
+                      "inverse-on-surface": "#313030",
+                      "on-background": "#e5e2e1",
+                      "tertiary-fixed": "#d2e5f5",
+                      "background": "#131313",
+                      "on-primary-container": "#556d00",
+                      "tertiary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#374956",
+                      "on-secondary-container": "#511500",
+                      "secondary": "#ffb59c",
+                      "surface-bright": "#393939",
+                      "on-secondary": "#5c1900",
+                      "outline-variant": "#444933",
+                      "primary-fixed": "#c3f400",
+                      "on-surface-variant": "#c4c9ac",
+                      "on-secondary-fixed": "#390c00",
+                      "primary": "#ffffff",
+                      "on-surface": "#e5e2e1",
+                      "surface-container": "#201f1f",
+                      "secondary-fixed": "#ffdbcf",
+                      "on-tertiary-container": "#556774",
+                      "tertiary-fixed-dim": "#b6c9d8",
+                      "surface-tint": "#abd600",
+                      "on-tertiary-fixed": "#0b1d29",
+                      "secondary-container": "#ff5708",
+                      "primary-container": "#c3f400",
+                      "tertiary-container": "#d2e5f5"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "container-max": "1280px",
+                      "margin-desktop": "48px",
+                      "gutter": "24px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": [
+                              "Space Grotesk"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Space Grotesk"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Space Grotesk"
+                      ],
+                      "display-lg": [
+                              "Space Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(195, 244, 0, 0.2);
+        }
+        .neon-glow:hover {
+            box-shadow: 0 0 25px rgba(195, 244, 0, 0.4);
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+      </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-background/80 backdrop-blur-md text-primary-fixed font-display-lg text-display-lg font-label-md text-label-md fixed top-0 w-full z-50 border-b border-outline-variant">
+<div class="flex justify-between items-center h-20 px-margin-desktop w-full max-w-container-max mx-auto">
+<div class="font-display-lg text-headline-md tracking-tighter text-primary italic uppercase">ApexVelocity</div>
+<nav class="hidden md:flex gap-8">
+<a class="text-on-surface-variant font-medium hover:text-primary-fixed transition-colors duration-200" href="#">Men</a>
+<a class="text-on-surface-variant font-medium hover:text-primary-fixed transition-colors duration-200" href="#">Women</a>
+<a class="text-on-surface-variant font-medium hover:text-primary-fixed transition-colors duration-200" href="#">Accessories</a>
+<a class="text-on-surface-variant font-medium hover:text-primary-fixed transition-colors duration-200" href="#">Sports</a>
+</nav>
+<div class="flex gap-4">
+<button class="text-on-surface hover:text-primary-fixed transition-colors duration-200">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+<button class="text-on-surface hover:text-primary-fixed transition-colors duration-200">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[120px] pb-20 px-margin-desktop w-full max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Gallery (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-base">
+<div class="w-full aspect-[4/5] bg-surface-container-highest rounded overflow-hidden relative group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A dynamic, high-contrast studio shot of a high-performance athletic shoe. The shoe is predominantly sleek black with electric neon green accents. Lighting is dramatic, emphasizing the shoe's textured aerodynamic materials against a pitch-black background. The mood is intense, fast, and highly technical." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEPK0nSK1dNR6kyQywalzklvC5iGzlW1DdqY5RishfrUvtwSFLyWo9G6pw-vSOkkrC4_QgbeaYWFNoX9p-HE97c2Vv6K1FL-snkkICqK619XxfnjrM6P1K4QLfzpd2BSxCk32HKwH3q8wVVpV_oxUkqw7ATa8ltGvP6y4-SIRMnMCYTH8HrGoAXQ-fl3gtzEj7E4Qgdta2328voHFbALxari5vunkWOAl4ggQyqpXxFQrtunfN9FBmwjwO7vFIpo8_tdX2a54k9ex3"/>
+</div>
+<div class="flex gap-base overflow-x-auto scrollbar-hide pb-2">
+<button class="flex-shrink-0 w-24 aspect-square bg-surface-container-highest rounded border-2 border-primary-fixed overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up detail shot of the athletic shoe's breathable mesh upper, highlighting the intricate weave and electric neon green underlay. Dramatic lighting, deep black background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApsPvx1N51NWO2g57ZhrO8hRu7_A5Ur6AhoKcWaVy2CU4IWiNqXff74AtFdKT3o0R8ChNdacThJmEfEeyBizVw0zNNIFtvq6Pc6FOtwWQA8CykE9OIB9zm-gfO0hIrNu87DRhDR_4Z8Utfu0f9GqOm65Tc_mr6D7a2eC2MnHFZfJcFq6D5nVQOzhgzLbCIBWMzqAYsaX0IxisAnTmKNQIDVlC8dYzPuHwLnp8hAXoh5m_c21L3wVLHk6HwihZHY9mgZHRn9YRE42jI"/>
+</button>
+<button class="flex-shrink-0 w-24 aspect-square bg-surface-container-highest rounded border border-outline-variant hover:border-primary-fixed transition-colors overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Side profile shot of the black and neon green athletic shoe, emphasizing its aggressive stance and aerodynamic sole unit. High-contrast lighting, dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2YSS4DtAiUe52jiTrJAJXlxJbJsfK0B5XErH9b5U8_TgD3sBIYypweNjrwgrJjA10PO4hTHrlKTyYe9pM9FMX32klmCAJmrE08PGQ236KodNLp-zGvH6WjAHZ5DL5_rr-5cabw3cPKb0XLQZktRD0A1YaAn47uCxFEnXuCVZqOmrBgY51-rcdgZRFw_Ik-o_YsOBbLffwgDmJYZ-n9jURd57jN-bqjBLcdGkJ8i1V4AXvblXRHq0y5LBYHFUbKLm560wEZlyaQl1J"/>
+</button>
+<button class="flex-shrink-0 w-24 aspect-square bg-surface-container-highest rounded border border-outline-variant hover:border-primary-fixed transition-colors overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Bottom view of the athletic shoe's sole, showcasing the high-traction tread pattern in electric neon green against black rubber. Studio lighting, technical feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4YUIBPokgQi8etHeDhHlRbn7XPrZrR9szr0lhFu5SkzltYY26S5JdzVY5EWuj2kKXdbrdktZplB-4p20pVEINXqet4WKJAflRqoMMM24FROZOaygOIJVKA1RSc71xtRZ0LR5GoOoJh0nn1bfCg3sk84X_E1qv17Gx-BuN1OEft2js04V_6vT3DIV806BB1xf9ow0VLmUkARLBBNgeU9Qr0YbRVwbelwpsmksdMeRwzp0I8wP1WQVddlO-_RBm4mcsJz9nUfOS1Sao"/>
+</button>
+</div>
+</div>
+<!-- Right Column: Details (5 cols) -->
+<div class="lg:col-span-5 flex flex-col pt-4 lg:pt-0">
+<div class="mb-8">
+<p class="font-label-md text-label-md text-primary-fixed uppercase tracking-widest mb-2">Elite Series</p>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-4">AeroStrider V2</h1>
+<p class="font-headline-md text-headline-md text-on-surface">$185.00</p>
+</div>
+<!-- Color Selection -->
+<div class="mb-8">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase mb-3">Color: Core Black / Volt</h3>
+<div class="flex gap-4">
+<button class="w-10 h-10 rounded-full bg-[#1A1A1A] border-2 border-primary-fixed flex items-center justify-center neon-glow">
+<div class="w-3 h-3 rounded-full bg-primary-fixed"></div>
+</button>
+<button class="w-10 h-10 rounded-full bg-[#F5F5F5] border border-outline-variant hover:border-primary-fixed transition-colors flex items-center justify-center">
+<div class="w-3 h-3 rounded-full bg-[#1A1A1A]"></div>
+</button>
+<button class="w-10 h-10 rounded-full bg-[#FF4500] border border-outline-variant hover:border-primary-fixed transition-colors flex items-center justify-center">
+<div class="w-3 h-3 rounded-full bg-[#1A1A1A]"></div>
+</button>
+</div>
+</div>
+<!-- Size Selection -->
+<div class="mb-10">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase">Size</h3>
+<a class="font-label-md text-label-md text-primary hover:text-primary-fixed transition-colors underline" href="#">Size Guide</a>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<button class="py-3 border border-outline-variant rounded text-on-surface font-label-md text-label-md hover:border-primary-fixed hover:text-primary-fixed transition-all">S</button>
+<button class="py-3 border-2 border-primary-fixed rounded bg-surface-container text-primary-fixed font-label-md text-label-md neon-glow">M</button>
+<button class="py-3 border border-outline-variant rounded text-on-surface font-label-md text-label-md hover:border-primary-fixed hover:text-primary-fixed transition-all">L</button>
+<button class="py-3 border border-outline-variant rounded text-on-surface font-label-md text-label-md hover:border-primary-fixed hover:text-primary-fixed transition-all">XL</button>
+</div>
+</div>
+<!-- Add to Cart -->
+<div class="mb-12">
+<button class="w-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md uppercase py-4 rounded hover:bg-white transition-colors duration-300 flex items-center justify-center gap-2 neon-glow">
+<span>Add to Cart</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Technical Specs Accordion -->
+<div class="border-t border-outline-variant">
+<details class="group py-4 border-b border-outline-variant" open="">
+<summary class="flex justify-between items-center font-label-md text-label-md text-primary uppercase cursor-pointer list-none">
+                            Technical Specs
+                            <span class="material-symbols-outlined transition group-open:rotate-180 text-primary-fixed">expand_more</span>
+</summary>
+<div class="text-on-surface-variant font-body-md text-body-md mt-4 space-y-2">
+<p>Engineered for maximum kinetic return.</p>
+<ul class="list-disc pl-5 space-y-1">
+<li>Weight: 215g (Size M)</li>
+<li>Drop: 8mm</li>
+<li>Upper: AeroWeave Mesh</li>
+<li>Midsole: ReactFoam PRO</li>
+</ul>
+</div>
+</details>
+<details class="group py-4 border-b border-outline-variant">
+<summary class="flex justify-between items-center font-label-md text-label-md text-primary uppercase cursor-pointer list-none">
+                            Shipping &amp; Returns
+                            <span class="material-symbols-outlined transition group-open:rotate-180 text-primary-fixed">expand_more</span>
+</summary>
+<div class="text-on-surface-variant font-body-md text-body-md mt-4">
+<p>Free express shipping on all orders over $150. Free returns within 30 days of purchase.</p>
+</div>
+</details>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest text-primary font-body-md text-body-md font-label-md text-label-md w-full py-20 border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-8 md:mb-0">
+<div class="font-display-lg text-headline-md text-primary mb-4 italic uppercase tracking-tighter">ApexVelocity</div>
+<p class="text-on-surface-variant text-sm">© 2024 ApexVelocity. Engineered for Performance.</p>
+</div>
+<div class="flex flex-col gap-3">
+<a class="text-on-surface-variant hover:text-primary transition-colors transition-opacity hover:opacity-80" href="#">About Us</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors transition-opacity hover:opacity-80" href="#">Size Guide</a>
+</div>
+<div class="flex flex-col gap-3">
+<a class="text-on-surface-variant hover:text-primary transition-colors transition-opacity hover:opacity-80" href="#">Returns</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors transition-opacity hover:opacity-80" href="#">Store Locator</a>
+</div>
+<div class="flex flex-col gap-3">
+<a class="text-on-surface-variant hover:text-primary transition-colors transition-opacity hover:opacity-80" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body></html>

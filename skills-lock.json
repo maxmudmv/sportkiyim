@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "stitch-sdk-usage": {
+      "source": "google-labs-code/stitch-sdk",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/stitch-sdk-usage/SKILL.md",
+      "computedHash": "193d22c65349264c942206812a50cf69870b36958e65efa567714a055a54d42e"
+    }
+  }
+}

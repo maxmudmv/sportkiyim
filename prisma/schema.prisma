@@ -1,0 +1,106 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String     @id @default(cuid())
+  /// Telegram user id (as string) — unique lookup key for TMA users
+  telegramId   String?    @unique
+  username     String?
+  photoUrl     String?
+  email        String?    @unique
+  name         String
+  passwordHash String?
+  createdAt    DateTime   @default(now())
+  sessions     Session[]
+  cartItems    CartItem[]
+  orders       Order[]
+}
+
+model Session {
+  token     String   @id
+  userId    String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Product {
+  id             String      @id @default(cuid())
+  slug           String      @unique
+  name           String
+  description    String
+  /// JSON array of { label, value } technical specs
+  specs          String
+  priceCents     Int
+  compareAtCents Int?
+  category       String
+  sport          String
+  gender         String
+  /// comma-separated available sizes, e.g. "S,M,L,XL"
+  sizes          String
+  colors         String
+  imageUrl       String
+  badge          String?
+  stock          Int
+  rating         Float
+  reviewCount    Int
+  createdAt      DateTime    @default(now())
+  cartItems      CartItem[]
+  orderItems     OrderItem[]
+}
+
+model CartItem {
+  id        String   @id @default(cuid())
+  userId    String
+  productId String
+  size      String
+  quantity  Int
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, productId, size])
+}
+
+model Order {
+  id            String      @id @default(cuid())
+  userId        String?
+  email         String
+  fullName      String
+  address       String
+  city          String
+  postalCode    String
+  country       String
+  subtotalCents Int
+  shippingCents Int
+  taxCents      Int
+  totalCents    Int
+  status        String      @default("PAID")
+  createdAt     DateTime    @default(now())
+  user          User?       @relation(fields: [userId], references: [id], onDelete: SetNull)
+  items         OrderItem[]
+
+  @@index([userId])
+}
+
+model OrderItem {
+  id        String  @id @default(cuid())
+  orderId   String
+  productId String
+  name      String
+  size      String
+  quantity  Int
+  unitCents Int
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product   Product @relation(fields: [productId], references: [id])
+
+  @@index([orderId])
+}

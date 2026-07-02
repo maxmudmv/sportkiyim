@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ApexVelocity</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#283500",
+                        "surface-container-highest": "#353534",
+                        "error": "#ffb4ab",
+                        "surface": "#131313",
+                        "outline": "#8e9379",
+                        "on-primary-fixed": "#161e00",
+                        "surface-variant": "#353534",
+                        "surface-container-high": "#2a2a2a",
+                        "error-container": "#93000a",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-dim": "#131313",
+                        "secondary-fixed-dim": "#ffb59c",
+                        "on-tertiary": "#21323e",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#822700",
+                        "on-primary-fixed-variant": "#3c4d00",
+                        "inverse-primary": "#506600",
+                        "primary-fixed-dim": "#abd600",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "inverse-on-surface": "#313030",
+                        "on-background": "#e5e2e1",
+                        "tertiary-fixed": "#d2e5f5",
+                        "background": "#131313",
+                        "on-primary-container": "#556d00",
+                        "tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#374956",
+                        "on-secondary-container": "#511500",
+                        "secondary": "#ffb59c",
+                        "surface-bright": "#393939",
+                        "on-secondary": "#5c1900",
+                        "outline-variant": "#444933",
+                        "primary-fixed": "#c3f400",
+                        "on-surface-variant": "#c4c9ac",
+                        "on-secondary-fixed": "#390c00",
+                        "primary": "#ffffff",
+                        "on-surface": "#e5e2e1",
+                        "surface-container": "#201f1f",
+                        "secondary-fixed": "#ffdbcf",
+                        "on-tertiary-container": "#556774",
+                        "tertiary-fixed-dim": "#b6c9d8",
+                        "surface-tint": "#abd600",
+                        "on-tertiary-fixed": "#0b1d29",
+                        "secondary-container": "#ff5708",
+                        "primary-container": "#c3f400",
+                        "tertiary-container": "#d2e5f5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "margin-desktop": "48px",
+                        "gutter": "24px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Space Grotesk"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Space Grotesk"],
+                        "display-lg": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neon-glow-hover:hover {
+            box-shadow: 0 0 15px rgba(195, 244, 0, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased overflow-x-hidden">
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto">
+<a class="font-display-lg text-headline-md tracking-tighter text-primary italic uppercase" href="#">ApexVelocity</a>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="font-label-md text-label-md text-on-surface-variant font-medium hover:text-primary-fixed transition-colors duration-200" href="#">Men</a>
+<a class="font-label-md text-label-md text-on-surface-variant font-medium hover:text-primary-fixed transition-colors duration-200" href="#">Women</a>
+<a class="font-label-md text-label-md text-on-surface-variant font-medium hover:text-primary-fixed transition-colors duration-200" href="#">Accessories</a>
+<a class="font-label-md text-label-md text-on-surface-variant font-medium hover:text-primary-fixed transition-colors duration-200" href="#">Sports</a>
+</div>
+<div class="flex gap-4 items-center text-primary-fixed">
+<button class="hover:text-primary transition-colors duration-200">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="hover:text-primary transition-colors duration-200">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="hover:text-primary transition-colors duration-200">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</div>
+</nav>
+<main>
+<section class="relative w-full h-[870px] flex items-center justify-center mt-20 px-margin-mobile md:px-margin-desktop">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent z-10"></div>
+<div class="w-full h-full bg-cover bg-center" data-alt="A highly dynamic, low-angle shot of a muscular sprinter exploding out of the starting blocks on a sleek, rain-slicked urban track at night. The scene is illuminated by dramatic, high-contrast cool white spotlights cutting through the dark space, with intense electric neon green accents highlighting the futuristic textures of their compression gear and the edges of the track. The mood is powerful, cinematic, and focused on pure velocity." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-MB0rIjudaJXgd7N7RvloDURFjMPyekOOd8lmQA3MwMejePpJDRcouBWcS3gI8LYmyH09k50r31EARwSLArag5sg8C4HRa7E2B52QcSH6DvnMLTpyVhF6sZQ5HL0G-UZAJXfrRqE3Ysz8gmLwBtl0w5WIFFnWlEo7SafNjbQvNsibRKuetgnuUGWxOC4t9zZy_D2mMhbCg0sqPnMhOx7f7z_1aL-c1d8s7_Q1UnbUh7BOvWTBic8E8M0haGGmls-0Xs0Xn9AYzH-C')"></div>
+</div>
+<div class="relative z-20 text-center max-w-3xl flex flex-col items-center gap-8">
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary uppercase tracking-tighter drop-shadow-lg">
+                    Unleash Your Ultimate Potential
+                </h1>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="px-8 py-4 bg-primary-fixed text-on-primary-fixed font-label-md text-label-md uppercase rounded transition-transform duration-150 hover:scale-105 neon-glow-hover">
+                        Shop New Arrivals
+                    </button>
+<button class="px-8 py-4 border-2 border-primary-fixed text-primary-fixed font-label-md text-label-md uppercase rounded transition-all duration-150 hover:bg-primary-fixed/10 hover:scale-105">
+                        Explore Gear
+                    </button>
+</div>
+</div>
+</section>
+<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-12 uppercase tracking-tight border-l-4 border-primary-fixed pl-4">Categories</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter h-auto md:h-[600px]">
+<div class="relative group overflow-hidden rounded bg-surface-container-high md:col-span-2 md:row-span-2 min-h-[300px]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-80" data-alt="A medium shot of a focused male athlete performing a heavy deadlift in a modern, brutalist industrial gym setting. Deep shadows dominate the space, contrasted sharply by a single, powerful beam of stark white light illuminating the athlete's muscular form and the sleek, matte black weights. The aesthetic is raw, technical, and high-performance." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCaHRXnwDxXfFb3RyczT1blglcN-diPJKBoj0f2WBP2iFRIdU85pPNepNuQUmQUaAqDheSbui3g8WG_FGCJ9Xlt-6LxgKw206AwrlFReym7VHoqUjgqC1cSr9CnZT3mgW_Zo6IXe7eAr83rvVAdq3IDfSiHz37xEMHESQwJtdYZKycNQtBbH78s5-kD9HEBkcyPHU3mvPG5ZFaiheaMte59ZAZqi4ovzfbhmnfffuPk66PhCaVnoOy6eUAsRtP3QrQ5E2Cv1Ss7ySqh')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="font-headline-md text-headline-md text-primary uppercase mb-2">Men's Apparel</h3>
+<a class="inline-flex items-center gap-2 font-label-md text-label-md text-primary-fixed hover:text-primary transition-colors" href="#">
+                            Shop Now <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="relative group overflow-hidden rounded bg-surface-container-high min-h-[300px]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-80" data-alt="A striking portrait of a female runner in mid-stride against a completely black void background. She is wearing ultra-modern, high-tech running apparel with subtle neon green piping that catches the directional lighting. The image emphasizes speed, agility, and premium technical fabrics, conveying a sense of elite athletic performance." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB3kWQk1tvnzVBPhsMbNeSXG-rwEax37rugX7JtNOKPod6qE03NktJXFnX6QvMANiCM583LMSnn9lFxYF47P68nIc2igwcWqNEqwLx9GKAO1Qp6yCfzx6GEwWQr1HIuvhS4mri78pMDExS9lHZw9FIhmbe-95Yqe-qyAQKpEzgX_bdxE5CiRiyU1luK-QDb38eeJUCMu2EgjYf3ispH-Gaggkq3kYO6k1SfRHy3PM_kPi8PC42_hChUxeD1QkSu5QyWjyfHJ1o1j0Zw')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="font-headline-md text-headline-md text-primary uppercase mb-2">Women's Apparel</h3>
+<a class="inline-flex items-center gap-2 font-label-md text-label-md text-primary-fixed hover:text-primary transition-colors" href="#">
+                            Shop Now <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="relative group overflow-hidden rounded bg-surface-container-high min-h-[300px]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-80" data-alt="A highly detailed macro photograph of a futuristic running shoe resting on a sleek, dark metallic surface. The shoe features aggressive tread patterns, carbon fiber detailing, and vivid electric neon green sole accents. The lighting is low-key with sharp highlights accentuating the technical materials and precision engineering of the footwear." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCuiyXR6kJCmkGWpTkiPglnGVMJjFt_RECbM5wjqzMXlrJYywQ1b0jLG5KLOieiTrCvH0UCU8VXgV3r1_fte2fs1mE0biPcj5CwkFAbSP0NFsxhW5wQ6HVJxwSSWkky5rDLjDQYnXQjANhQjdXrpNjSyr33cjTkOtzjV7v6ReivMiwBfwFtnu8NaeuDu8cgqlj3mZesGOdzF99CnWYKCzdu1RH1juNn5jYrxP_kLq-0rGiNxKMdGlqa-n6dOqvLuYUSBRdqXSZQSus8')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="font-headline-md text-headline-md text-primary uppercase mb-2">Technical Gear</h3>
+<a class="inline-flex items-center gap-2 font-label-md text-label-md text-primary-fixed hover:text-primary transition-colors" href="#">
+                            Shop Now <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto border-t border-outline-variant/30">
+<div class="flex justify-between items-end mb-12">
+<h2 class="font-headline-lg text-headline-lg text-primary uppercase tracking-tight border-l-4 border-primary-fixed pl-4">Trending Now</h2>
+<a class="hidden sm:inline-flex items-center gap-2 font-label-md text-label-md text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">
+                    View All <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="group relative flex flex-col bg-surface-container-high rounded overflow-hidden border border-outline-variant/50 hover:border-primary-fixed transition-colors duration-300">
+<div class="relative h-80 overflow-hidden bg-surface-container-highest p-4">
+<img class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105" data-alt="A clean, studio product shot of a sleek, aerodynamic black windbreaker jacket designed for elite runners. The jacket is displayed flat against a completely dark, minimalist background. Subtle lighting highlights the technical, weather-resistant fabric and a barely visible neon green zipper pull detail. High-end athletic fashion style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ7NFXczTlslDO8UOsUR5EsXIrvgSDRLwvhUPhXx9fy3qTdrEiZC43ub-4Cd5hz7zaZnZiy3_eFlYXo-p1-OZTF5hVpp69wVbjZX6O0_MTM3a0th2wGMTXC07oMjyJcz_duPRVz_xQTUxgGNtlpjVXAsYUkRFuG_sYCNZ2ybUOUr_vhmooI6ICCpbn7QWc7kBeE14vAXl3aQ1wwry1m2BwdjWXvvGgw8e0VV72zz9fSxeCMcOPVi2YHaEUcy3GChEouRE48M7QtDyo"/>
+<div class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container font-label-md text-[12px] px-2 py-1 uppercase rounded-sm font-bold">
+                            New
+                        </div>
+<div class="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out bg-gradient-to-t from-surface-container-high via-surface-container-high/90 to-transparent">
+<button class="w-full py-3 bg-primary-fixed text-on-primary-fixed font-label-md text-label-md uppercase rounded neon-glow-hover">
+                                Quick Add
+                            </button>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-body-md text-body-md text-primary font-medium">AeroWeave Pro Windbreaker</h3>
+<span class="font-body-md text-body-md text-primary-fixed font-bold">$145</span>
+</div>
+<div class="flex items-center gap-1 mt-auto pt-2 text-primary-fixed text-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star_half</span>
+<span class="text-on-surface-variant ml-2 text-xs">(128)</span>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col bg-surface-container-high rounded overflow-hidden border border-outline-variant/50 hover:border-primary-fixed transition-colors duration-300">
+<div class="relative h-80 overflow-hidden bg-surface-container-highest p-4">
+<img class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105" data-alt="A high-resolution product image of a cutting-edge GPS running watch with a matte black carbon fiber casing and a vivid, illuminated digital display showing training metrics. The watch is presented on a dark, reflective surface that mirrors its neon green data readouts. Technical, premium, and functional aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjAtAl3k2uTD6jVKYzMBtuZQSkdO0qIRHHK2kSGNPH4qcOG3Hy6IYV9Q5fCYTRrnZkXJewGXUqAgVipgrc7RsHZ0FoI8D8YytDm-YSVOBb1b1FBFMM9cJVusYaXbg_e3GbDEWTq7KvOwe_sAGVY43-U2SQ8ivimuM23-2hkkbXIJUosVdBRrrnBmY9hroseFCvsUWnp6OG23IEuLuk0Ixbe5dgfAkZuyHaSyAxOE6B6zLjcOmHQ8nrgyQBRUSH2WYYEO1sotDND-_o"/>
+<div class="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out bg-gradient-to-t from-surface-container-high via-surface-container-high/90 to-transparent">
+<button class="w-full py-3 bg-primary-fixed text-on-primary-fixed font-label-md text-label-md uppercase rounded neon-glow-hover">
+                                Quick Add
+                            </button>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-body-md text-body-md text-primary font-medium">Velocity Chrono X2</h3>
+<span class="font-body-md text-body-md text-primary-fixed font-bold">$399</span>
+</div>
+<div class="flex items-center gap-1 mt-auto pt-2 text-primary-fixed text-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-on-surface-variant ml-2 text-xs">(84)</span>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col bg-surface-container-high rounded overflow-hidden border border-outline-variant/50 hover:border-primary-fixed transition-colors duration-300">
+<div class="relative h-80 overflow-hidden bg-surface-container-highest p-4">
+<img class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105" data-alt="A dynamic product shot of women's high-compression training tights in a dark charcoal grey pattern with aggressive, intersecting lines that suggest speed and kinetic energy. The leggings are displayed floating elegantly against an absolute black background, lit with subtle rim lighting to emphasize the fabric's technical texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmGgacu2mG64QnYC6aBV-Mrp_fzxCAUQ-8g-hiFKjZTg-Z7evlpRX8XUlyKRZwec5Qih8uagj37VDARMBFsQsE3mjGPjYb1hJCI_OIUsPaoORjzSSmbCJGP_5Q2807sVL84Sti6xeGfEy4bt11TYQ2MLZwR7o8itD1GIdz2RzD7yfkcLdopDLaiR-6Askj6fp-V_lBbuGUOawsFst0waE4UHvYYxfTgQ7ZDbngbHytZwGuPYud-Tb0soKVjNjOevoJKpO73IM6BK5O"/>
+<div class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container font-label-md text-[12px] px-2 py-1 uppercase rounded-sm font-bold">
+                            Best Seller
+                        </div>
+<div class="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out bg-gradient-to-t from-surface-container-high via-surface-container-high/90 to-transparent">
+<button class="w-full py-3 bg-primary-fixed text-on-primary-fixed font-label-md text-label-md uppercase rounded neon-glow-hover">
+                                Quick Add
+                            </button>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-body-md text-body-md text-primary font-medium">Kinetic Compression Tights</h3>
+<span class="font-body-md text-body-md text-primary-fixed font-bold">$110</span>
+</div>
+<div class="flex items-center gap-1 mt-auto pt-2 text-primary-fixed text-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="text-on-surface-variant ml-2 text-xs">(312)</span>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col bg-surface-container-high rounded overflow-hidden border border-outline-variant/50 hover:border-primary-fixed transition-colors duration-300">
+<div class="relative h-80 overflow-hidden bg-surface-container-highest p-4">
+<img class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105" data-alt="A clean, minimalist product photograph of a lightweight, matte black hydration pack designed for ultra-marathon runners. The pack features extremely slim profiles, tactical-style straps, and small, reflective electric green logos. It is shot directly from the front against a pitch-black studio background with crisp, clinical lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJXFM8wGcFbBpOD9TxD-cMCIRC_ec2G16UXSxMiJVha0Hf8gn4TTSnOtzLVdsPOEfR_fYe3DrWKpL7biro9V5UCfTUlY6VKcpJlgvRATUAbaN3T-mz1AzXYTOlOLHM-3LpxAJpdavRonri4Dty8jeZkjbIJ_8nlROBjelUDTBfLZBM4jTKbHYx2AxEzCqxXx8LgdpkGcWRAExRrREuMzPY2hu-lgZde47rCpwEAyIUtv6TZ0T5IhJaf3JnyfGpBH1fTRTKIXfYN454"/>
+<div class="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out bg-gradient-to-t from-surface-container-high via-surface-container-high/90 to-transparent">
+<button class="w-full py-3 bg-primary-fixed text-on-primary-fixed font-label-md text-label-md uppercase rounded neon-glow-hover">
+                                Quick Add
+                            </button>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-body-md text-body-md text-primary font-medium">Apex Ultra Hydration Vest</h3>
+<span class="font-body-md text-body-md text-primary-fixed font-bold">$135</span>
+</div>
+<div class="flex items-center gap-1 mt-auto pt-2 text-primary-fixed text-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-on-surface-variant ml-2 text-xs">(56)</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 text-center sm:hidden">
+<button class="px-8 py-4 border border-outline-variant text-on-surface-variant font-label-md text-label-md uppercase rounded w-full">
+                    View All Products
+                </button>
+</div>
+</section>
+</main>
+<footer class="bg-surface-container-lowest border-t border-outline-variant w-full py-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1 mb-8 md:mb-0">
+<a class="font-display-lg text-headline-md text-primary italic uppercase tracking-tighter mb-4 block hover:text-primary-fixed transition-colors" href="#">ApexVelocity</a>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
+                    Engineered for those who demand ultimate performance. Push boundaries, break records.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md text-primary uppercase tracking-widest mb-2">Company</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:opacity-80" href="#">About Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:opacity-80" href="#">Store Locator</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md text-primary uppercase tracking-widest mb-2">Support</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:opacity-80" href="#">Size Guide</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:opacity-80" href="#">Returns</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md text-primary uppercase tracking-widest mb-2">Legal</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:opacity-80" href="#">Privacy Policy</a>
+<p class="font-body-md text-body-md text-on-surface-variant mt-8 text-sm">
+                    © 2024 ApexVelocity. Engineered for Performance.
+                </p>
+</div>
+</div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body></html>

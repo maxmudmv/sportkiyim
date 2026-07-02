@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout | ApexVelocity</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#283500",
+                    "surface-container-highest": "#353534",
+                    "error": "#ffb4ab",
+                    "surface": "#131313",
+                    "outline": "#8e9379",
+                    "on-primary-fixed": "#161e00",
+                    "surface-variant": "#353534",
+                    "surface-container-high": "#2a2a2a",
+                    "error-container": "#93000a",
+                    "surface-container-low": "#1c1b1b",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-dim": "#131313",
+                    "secondary-fixed-dim": "#ffb59c",
+                    "on-tertiary": "#21323e",
+                    "inverse-surface": "#e5e2e1",
+                    "on-secondary-fixed-variant": "#822700",
+                    "on-primary-fixed-variant": "#3c4d00",
+                    "inverse-primary": "#506600",
+                    "primary-fixed-dim": "#abd600",
+                    "on-error-container": "#ffdad6",
+                    "on-error": "#690005",
+                    "inverse-on-surface": "#313030",
+                    "on-background": "#e5e2e1",
+                    "tertiary-fixed": "#d2e5f5",
+                    "background": "#131313",
+                    "on-primary-container": "#556d00",
+                    "tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#374956",
+                    "on-secondary-container": "#511500",
+                    "secondary": "#ffb59c",
+                    "surface-bright": "#393939",
+                    "on-secondary": "#5c1900",
+                    "outline-variant": "#444933",
+                    "primary-fixed": "#c3f400",
+                    "on-surface-variant": "#c4c9ac",
+                    "on-secondary-fixed": "#390c00",
+                    "primary": "#ffffff",
+                    "on-surface": "#e5e2e1",
+                    "surface-container": "#201f1f",
+                    "secondary-fixed": "#ffdbcf",
+                    "on-tertiary-container": "#556774",
+                    "tertiary-fixed-dim": "#b6c9d8",
+                    "surface-tint": "#abd600",
+                    "on-tertiary-fixed": "#0b1d29",
+                    "secondary-container": "#ff5708",
+                    "primary-container": "#c3f400",
+                    "tertiary-container": "#d2e5f5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "margin-desktop": "48px",
+                    "gutter": "24px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Space Grotesk"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Space Grotesk"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Space Grotesk"],
+                    "display-lg": ["Space Grotesk"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Custom Input Styling per guidelines: Dark surface with bottom border, neon green on focus */
+        .kinetic-input {
+            @apply w-full bg-surface-container border-0 border-b border-outline-variant px-4 py-3 text-on-surface font-body-md text-body-md focus:ring-0 focus:border-primary-fixed focus:outline-none transition-colors duration-200 placeholder:text-on-surface-variant/50;
+        }
+        /* Custom neon glow for active elements */
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(195, 244, 0, 0.2);
+        }
+        .neon-glow-hover:hover {
+            box-shadow: 0 0 20px rgba(195, 244, 0, 0.4);
+            transform: scale(1.01);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Minimal Header for Transactional Flow (Navigation Suppressed) -->
+<header class="py-6 px-margin-mobile md:px-margin-desktop border-b border-surface-container-highest flex justify-between items-center bg-surface/80 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-2">
+<span class="font-display-lg text-headline-lg tracking-tighter text-primary-fixed italic uppercase">ApexVelocity</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+<span class="font-label-md text-label-md uppercase">Secure Checkout</span>
+</div>
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-16">
+<!-- Progress Bar -->
+<div class="flex items-center justify-center max-w-2xl mx-auto mb-16">
+<!-- Step 1: Active -->
+<div class="flex flex-col items-center gap-2 relative z-10">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-label-md text-label-md neon-glow">1</div>
+<span class="font-label-md text-label-md uppercase text-primary-fixed absolute top-12 whitespace-nowrap">Shipping</span>
+</div>
+<div class="flex-1 h-px bg-outline-variant relative -top-4 -mx-2 z-0">
+<div class="h-full bg-primary-fixed w-1/2"></div>
+</div>
+<!-- Step 2: Upcoming -->
+<div class="flex flex-col items-center gap-2 relative z-10">
+<div class="w-10 h-10 rounded-full bg-surface-container border-2 border-outline-variant text-on-surface-variant flex items-center justify-center font-label-md text-label-md">2</div>
+<span class="font-label-md text-label-md uppercase text-on-surface-variant absolute top-12 whitespace-nowrap">Payment</span>
+</div>
+<div class="flex-1 h-px bg-outline-variant relative -top-4 -mx-2 z-0"></div>
+<!-- Step 3: Upcoming -->
+<div class="flex flex-col items-center gap-2 relative z-10">
+<div class="w-10 h-10 rounded-full bg-surface-container border-2 border-outline-variant text-on-surface-variant flex items-center justify-center font-label-md text-label-md">3</div>
+<span class="font-label-md text-label-md uppercase text-on-surface-variant absolute top-12 whitespace-nowrap">Review</span>
+</div>
+</div>
+<!-- Checkout Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-16 items-start mt-8">
+<!-- Left Column: Forms -->
+<div class="lg:col-span-7 space-y-12">
+<!-- Contact Section -->
+<section>
+<div class="flex justify-between items-end mb-6">
+<h2 class="font-headline-md text-headline-md text-on-surface">Contact Information</h2>
+<a class="font-label-md text-label-md text-primary-fixed hover:underline" href="#">Log in</a>
+</div>
+<div class="space-y-4">
+<div class="relative">
+<input class="kinetic-input" id="email" placeholder="Email Address" required="" type="email"/>
+<label class="sr-only" for="email">Email Address</label>
+</div>
+<div class="flex items-center gap-3 mt-4">
+<input class="w-5 h-5 bg-surface border-outline-variant rounded-[4px] text-primary-fixed focus:ring-primary-fixed focus:ring-offset-background" id="newsletter" type="checkbox"/>
+<label class="font-body-md text-body-md text-on-surface-variant" for="newsletter">Email me with news and offers</label>
+</div>
+</div>
+</section>
+<!-- Shipping Address Section -->
+<section>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Shipping Address</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-gutter gap-y-6">
+<div class="md:col-span-2">
+<select class="kinetic-input appearance-none bg-no-repeat bg-[right_1rem_center]" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%24%2024%22%20fill%3D%22none%22%20stroke%3D%22%23c4c9ac%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E');">
+<option>United States</option>
+<option>Canada</option>
+<option>United Kingdom</option>
+</select>
+</div>
+<div>
+<input class="kinetic-input" placeholder="First Name" required="" type="text"/>
+</div>
+<div>
+<input class="kinetic-input" placeholder="Last Name" required="" type="text"/>
+</div>
+<div class="md:col-span-2">
+<input class="kinetic-input" placeholder="Address" required="" type="text"/>
+</div>
+<div class="md:col-span-2">
+<input class="kinetic-input" placeholder="Apartment, suite, etc. (optional)" type="text"/>
+</div>
+<div>
+<input class="kinetic-input" placeholder="City" required="" type="text"/>
+</div>
+<div>
+<select class="kinetic-input appearance-none bg-no-repeat bg-[right_1rem_center]" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%24%2024%22%20fill%3D%22none%22%20stroke%3D%22%23c4c9ac%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E');">
+<option disabled="" selected="" value="">State</option>
+<option>CA</option>
+<option>NY</option>
+<option>TX</option>
+</select>
+</div>
+<div>
+<input class="kinetic-input" placeholder="ZIP Code" required="" type="text"/>
+</div>
+<div>
+<input class="kinetic-input" placeholder="Phone" required="" type="tel"/>
+</div>
+</div>
+</section>
+<!-- Action Buttons -->
+<div class="flex flex-col-reverse md:flex-row justify-between items-center gap-6 pt-6 border-t border-surface-container-highest">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface flex items-center gap-2 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+                        Return to cart
+                    </a>
+<button class="w-full md:w-auto bg-primary-fixed text-on-primary-fixed px-8 py-4 rounded-[4px] font-label-md text-label-md uppercase tracking-wide neon-glow-hover transition-all duration-300">
+                        Continue to Payment
+                    </button>
+</div>
+</div>
+<!-- Right Column: Order Summary (Bento-style Glassmorphism Card) -->
+<div class="lg:col-span-5">
+<div class="bg-surface-container/50 backdrop-blur-xl border border-surface-container-highest rounded-xl p-6 lg:p-8 sticky top-32">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Order Summary</h2>
+<!-- Items List -->
+<div class="space-y-6 mb-8">
+<!-- Item 1 -->
+<div class="flex gap-4 items-center">
+<div class="relative w-20 h-24 bg-surface-container-highest rounded bg-cover bg-center overflow-hidden border border-outline-variant/30" data-alt="Close up product shot of a sleek, aerodynamic carbon fiber running shoe. The shoe is deep matte black with sharp, electric neon green accents running along the sole and laces. The lighting is dramatic and moody, highlighting the technical texture of the knit upper and carbon plate. High-contrast, modern athletic aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAz8Ew5TR5-U_VlBXfu0Gha7-uWvZ-SKDrjE7lgso91MyqA7kExYUZrD-H9DVBCdogrTNvGdopoNYym1TOArRB4jesNclhOM2_-Xni4mYrD5qFtc1TkjVKIOfzrUAOpS1Qwpz0yeTvsviV7bGw_y7vL9O-7KhsZIcUjpXUnJ8BkhybV_sdJ099SB-A__J2SaK5ovbeBPKJ7l0I-jZwScoEF-AkEinU3Y-BArn_xPiVINtab9X-kRqMuQGQABZ-pFIpJMfgfPrQlntuI')">
+<div class="absolute -top-2 -right-2 w-6 h-6 bg-surface-container-highest border border-outline-variant rounded-full flex items-center justify-center font-label-md text-[10px] text-on-surface z-10">
+                                    1
+                                </div>
+</div>
+<div class="flex-1">
+<h3 class="font-label-md text-label-md text-on-surface uppercase">AeroCarbon Pro Stride</h3>
+<p class="font-body-md text-[14px] text-on-surface-variant mt-1">Size: 10.5 | Color: Stealth/Neon</p>
+</div>
+<div class="font-label-md text-label-md text-on-surface">
+                                $249.00
+                            </div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-4 items-center">
+<div class="relative w-20 h-24 bg-surface-container-highest rounded bg-cover bg-center overflow-hidden border border-outline-variant/30" data-alt="A highly technical, lightweight athletic windbreaker jacket neatly folded. The fabric has a subtle hexagonal grid pattern reflecting high-key studio light. It is pitch black with a glowing neon green zipper and minimal branding. The mood is precise, engineered, and fast. Dark mode presentation." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCGc0F8jvaS4fq3_QEaNkzmH0UKEwdYcABBsyOJS_kctNXCoPeCEyvn9XmdwzetUpVztbZzkL6398C8gnIKvVVp8eP5XLs4APg2dAbAkKr-EKSM45P2UjZlvFB_ezG6rfNObTuGoHdhL6RsU1dWcLZRjMVrwdai4ZV_bUr90_9q7p0rQBhIK1ZVK5mZL9_XgffMu-9iwnS8iU81SFuqjMl7vaXggjUm9mrlEnsNf8mFWWXVv0XDzfp0vj-dYBO90RVhccLt86O2avb5')">
+<div class="absolute -top-2 -right-2 w-6 h-6 bg-surface-container-highest border border-outline-variant rounded-full flex items-center justify-center font-label-md text-[10px] text-on-surface z-10">
+                                    1
+                                </div>
+</div>
+<div class="flex-1">
+<h3 class="font-label-md text-label-md text-on-surface uppercase">Velocity Shell Jacket</h3>
+<p class="font-body-md text-[14px] text-on-surface-variant mt-1">Size: M | Color: Core Black</p>
+</div>
+<div class="font-label-md text-label-md text-on-surface">
+                                $129.00
+                            </div>
+</div>
+</div>
+<!-- Promo Code -->
+<div class="py-6 border-y border-surface-container-highest mb-6">
+<div class="flex gap-4">
+<input class="kinetic-input flex-1 !py-2" placeholder="Gift card or discount code" type="text"/>
+<button class="px-6 py-2 border-2 border-primary-fixed text-primary-fixed rounded-[4px] font-label-md text-label-md uppercase hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors duration-300">
+                                Apply
+                            </button>
+</div>
+</div>
+<!-- Totals -->
+<div class="space-y-3 font-body-md text-body-md text-on-surface-variant mb-6">
+<div class="flex justify-between">
+<span>Subtotal</span>
+<span class="text-on-surface font-medium">$378.00</span>
+</div>
+<div class="flex justify-between">
+<span>Shipping</span>
+<span class="text-on-surface font-medium">Calculated at next step</span>
+</div>
+<div class="flex justify-between">
+<span>Estimated Tax</span>
+<span class="text-on-surface font-medium">$30.24</span>
+</div>
+</div>
+<div class="flex justify-between items-end pt-6 border-t border-surface-container-highest">
+<span class="font-headline-md text-[20px] text-on-surface">Total</span>
+<div class="text-right">
+<span class="text-on-surface-variant font-label-md text-[12px] mr-2">USD</span>
+<span class="font-display-lg text-[32px] leading-none text-primary-fixed tracking-tighter">$408.24</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<script src="assets/site.js"></script>
+</body></html>
